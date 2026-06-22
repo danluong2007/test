@@ -242,13 +242,13 @@
             }
         }
 
-        // Script cài đặt PWA (Install page as app)
+        // Script biến Web thành App (PWA)
         let deferredPrompt;
         
         window.addEventListener('beforeinstallprompt', (e) => {
-            // Ngăn trình duyệt tự động hiển thị popup
+            // Ngăn popup mặc định của trình duyệt để tự điều khiển
             e.preventDefault();
-            // Lưu lại event để kích hoạt khi bấm nút
+            // Lưu lại sự kiện để gọi khi người dùng bấm nút
             deferredPrompt = e;
         });
 
@@ -256,16 +256,26 @@
         if (installBtn) {
             installBtn.addEventListener('click', async () => {
                 if (deferredPrompt) {
-                    // Hiển thị popup cài đặt của trình duyệt
+                    // TỰ ĐỘNG BẬT BẢNG CÀI ĐẶT NGAY KHI BẤM NÚT
                     deferredPrompt.prompt();
-                    // Đợi người dùng phản hồi (Đồng ý hoặc Hủy)
+                    // Chờ người dùng xác nhận
                     const { outcome } = await deferredPrompt.userChoice;
-                    // Xóa event sau khi dùng xong
+                    console.log(`Kết quả cài đặt: ${outcome}`);
+                    // Xóa sự kiện sau khi dùng xong
                     deferredPrompt = null;
                 } else {
-                    // Thông báo nếu trình duyệt không hỗ trợ hoặc web chưa đủ điều kiện PWA (thiếu manifest, chạy file local...)
-                    alert('Lưu ý: Để nút này hiện bảng cài đặt, website cần được tải lên máy chủ thật (có https) và phải khai báo file manifest.json chuẩn PWA.\n\nTrong lúc thử nghiệm ở máy tính, bạn vui lòng làm theo 3 bước hướng dẫn cài đặt thủ công ở trên nhé!');
+                    // Báo lỗi nếu dùng iPhone hoặc web chưa sẵn sàng
+                    alert('Trình duyệt của bạn (hoặc iOS) không cho phép nút bấm tự động cài.\nVui lòng làm theo các bước hướng dẫn trên màn hình nhé!');
                 }
+            });
+        }
+
+        // Khởi tạo Service Worker (ĐIỀU KIỆN BẮT BUỘC của Google Chrome để nút cài đặt hoạt động)
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js')
+                .then((reg) => console.log('Service worker đã đăng ký thành công.', reg))
+                .catch((err) => console.log('Lỗi đăng ký Service worker.', err));
             });
         }
     </script>
