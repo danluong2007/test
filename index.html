@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nền tảng học tiếng Anh</title>
+    <link rel="icon" type="image/png" href="logo 22062026.png">
+    
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="logo 22062026.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ukBlue: '#012169',
+                        ukRed: '#C8102E',
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'float-delayed': 'float 6s ease-in-out 3s infinite',
+                        'fade-in-up': 'fadeInUp 1s ease-out forwards',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Nền chấm bi (Dotted Notebook Background) */
+        .bg-notebook {
+            background-color: #ffffff;
+            background-image: radial-gradient(#e2e8f0 1.5px, transparent 1.5px);
+            background-size: 24px 24px;
+        }
+
+        /* Hiệu ứng kính mờ (Glassmorphism) */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 8px 32px 0 rgba(1, 33, 105, 0.1);
+        }
+
+        /* Gradient Text */
+        .text-gradient {
+            background: linear-gradient(135deg, #012169, #C8102E);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-notebook font-sans text-slate-800 antialiased overflow-x-hidden">
+
+    <header class="fixed top-0 left-0 w-full z-50 px-4 py-4 md:px-8 transition-all duration-400 pt-6 md:pt-8 bg-notebook/90 backdrop-blur-sm">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            
+            <a href="#" class="transition-transform hover:scale-105 block">
+                <img src="logo.png" alt="Logo" class="h-10 md:h-12 object-contain">
+            </a>
+
+            <nav class="hidden md:flex items-center space-x-2 glass-panel rounded-full px-6 py-2.5">
+                <a href="#" class="px-4 py-1.5 font-semibold text-ukBlue hover:text-ukRed hover:bg-white/50 rounded-full transition-all duration-300">
+                    Từ vựng
+                </a>
+                <div class="w-px h-5 bg-slate-300 mx-2"></div> <a href="#" class="px-4 py-1.5 font-semibold text-ukBlue hover:text-ukRed hover:bg-white/50 rounded-full transition-all duration-300">
+                    Ngữ pháp
+                </a>
+            </nav>
+
+            <div class="flex items-center space-x-4 glass-panel rounded-full px-4 py-2">
+                <button class="relative group p-2 text-orange-500 hover:text-orange-600 transition-colors" title="Chuỗi ngày học">
+                    <i class="fa-solid fa-fire text-lg"></i>
+                    <span class="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-orange-100 text-[10px] font-bold">7</span>
+                </button>
+                <button class="p-2 text-ukBlue hover:text-ukRed transition-colors" title="Thống kê">
+                    <i class="fa-solid fa-chart-simple text-lg"></i>
+                </button>
+                <button class="p-2 text-ukBlue hover:text-ukRed transition-colors" title="Tải xuống">
+                    <i class="fa-solid fa-download text-lg"></i>
+                </button>
+                <button class="p-2 text-ukBlue hover:text-ukRed transition-colors relative" title="Thông báo">
+                    <i class="fa-solid fa-bell text-lg"></i>
+                    <span class="absolute top-1.5 right-1.5 flex h-2.5 w-2.5">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-ukRed opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-ukRed"></span>
+                    </span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <section class="relative min-h-[100dvh] flex items-center justify-center p-4 md:p-8 pt-24 md:pt-28 overflow-hidden">
+        <div class="absolute top-1/4 left-1/4 w-72 h-72 bg-ukBlue/20 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-float"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-72 h-72 bg-ukRed/20 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-float-delayed"></div>
+
+        <div class="relative z-10 w-full animate-fade-in-up" style="filter: drop-shadow(0 6px 16px rgba(0,0,0,0.75));">
+            
+            <div class="relative w-full h-[80dvh] md:h-[85dvh] rounded-2xl md:rounded-3xl overflow-hidden bg-black border border-white/10"
+                 style="-webkit-mask-image: radial-gradient(ellipse 100% 224px at 50% calc(100% + 194px), transparent 99.5%, black 100%);
+                        mask-image: radial-gradient(ellipse 100% 224px at 50% calc(100% + 194px), transparent 99.5%, black 100%);">
+                
+                <div class="absolute inset-0">
+                    <img src="banner.png" alt="Banner Image" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+                </div>
+
+                <div class="absolute bottom-0 left-0 w-full p-8 md:p-12 lg:p-16 flex flex-col items-start gap-4">
+                    <div class="inline-block px-4 py-1.5 glass-panel rounded-full text-sm font-bold text-ukBlue mb-2">
+                        Learn English
+                    </div>
+
+                    <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight">
+    Gốc <span style="color:#CF142B;">vững vàng</span> <br>
+    Lên trình <span style="color:#00247D;">dễ dàng</span>
+</h1>
+
+                    
+
+                    <div class="flex flex-row items-center gap-4 mt-6">
+                        <button class="px-8 py-3 bg-white text-ukBlue font-bold rounded-2xl flex items-center hover:bg-slate-200 transition-all duration-300">
+                            <i class="fa-solid fa-play mr-2"></i> Từ vựng
+                        </button>
+                        <button class="px-8 py-3 bg-white text-ukBlue font-bold rounded-2xl flex items-center hover:bg-slate-200 transition-all duration-300">
+                            <i class="fa-solid fa-play mr-2"></i> Ngữ pháp
+                        </button>
+                    </div>
+                </div>
+
+                <div class="absolute top-8 right-8 text-white text-3xl cursor-pointer hover:text-slate-200 transition-colors">
+                    <i class="fa-solid fa-circle-info" title="Hướng dẫn"></i>
+                </div>
+            </div>
+        </div>
+
+        <a href="#main-content" class="absolute bottom-4 left-1/2 -translate-x-1/2 animate-bounce cursor-pointer opacity-50 hover:opacity-100 transition-opacity">
+            <i class="fa-solid fa-chevron-down text-2xl text-ukBlue"></i>
+        </a>
+    </section>
+
+    <main id="main-content" class="max-w-3xl mx-auto px-4 py-20">
+        <div class="text-center mb-10">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-ukBlue/10 text-ukBlue rounded-full text-sm font-bold mb-4 border border-ukBlue/20 shadow-sm">
+                <i class="fa-solid fa-mobile-screen"></i> Cài đặt miễn phí
+            </div>
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-4">
+                Cài đặt ứng dụng <span class="text-ukBlue">Eng</span><span class="text-ukRed">Joy</span>
+            </h2>
+            <p class="text-slate-500 max-w-xl mx-auto font-medium">
+                Học mọi lúc mọi nơi — cài ứng dụng miễn phí trực tiếp từ trình duyệt, không cần App Store
+            </p>
+        </div>
+
+        <div class="bg-slate-100/80 p-1.5 rounded-2xl flex justify-center mb-10 max-w-md mx-auto border border-slate-200 shadow-sm">
+            <button id="tab-android" class="flex-1 py-2.5 rounded-xl font-bold text-ukBlue bg-white shadow-sm transition-all flex items-center justify-center gap-2" onclick="switchTab('android')">
+                <i class="fa-solid fa-desktop"></i> Android / Chrome
+            </button>
+            <button id="tab-ios" class="flex-1 py-2.5 rounded-xl font-bold text-slate-400 hover:text-ukRed transition-all flex items-center justify-center gap-2 bg-transparent" onclick="switchTab('ios')">
+                <i class="fa-brands fa-apple text-lg"></i> iPhone / iPad
+            </button>
+        </div>
+
+        <div id="content-android" class="space-y-4 animate-fade-in-up">
+            <div class="bg-white p-5 rounded-2xl flex items-center gap-5 border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                <div class="w-8 h-8 shrink-0 rounded-full bg-ukBlue text-white flex items-center justify-center font-bold text-sm shadow-md">1</div>
+                <div class="w-10 h-10 shrink-0 rounded-xl bg-ukBlue/10 text-ukBlue flex items-center justify-center text-lg"><i class="fa-solid fa-desktop"></i></div>
+                <div class="font-semibold text-slate-700">Mở trang web EngJoy trên trình duyệt Chrome</div>
+            </div>
+            
+            <div class="bg-white p-5 rounded-2xl flex items-center gap-5 border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                <div class="w-8 h-8 shrink-0 rounded-full bg-ukBlue text-white flex items-center justify-center font-bold text-sm shadow-md">2</div>
+                <div class="w-10 h-10 shrink-0 rounded-xl bg-ukBlue/10 text-ukBlue flex items-center justify-center text-lg"><i class="fa-solid fa-download"></i></div>
+                <div class="font-semibold text-slate-700">Nhấn vào biểu tượng "Cài đặt" trên thanh địa chỉ hoặc menu <i class="fa-solid fa-ellipsis-vertical mx-1"></i></div>
+            </div>
+            
+            <div class="bg-white p-5 rounded-2xl flex items-center gap-5 border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                <div class="w-8 h-8 shrink-0 rounded-full bg-ukBlue text-white flex items-center justify-center font-bold text-sm shadow-md">3</div>
+                <div class="w-10 h-10 shrink-0 rounded-xl bg-ukBlue/10 text-ukBlue flex items-center justify-center text-lg"><i class="fa-regular fa-circle-check"></i></div>
+                <div class="font-semibold text-slate-700">Kéo xuống và chọn Cast, save and share và chọn Install page as app</div>
+            </div>
+            
+            <div class="mt-8 pt-4">
+                <button id="installAppBtn" class="block w-full py-4 bg-ukBlue hover:bg-blue-900 text-white text-center font-bold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <i class="fa-solid fa-download mr-2"></i> Cài đặt ngay
+                </button>
+            </div>
+        </div>
+
+        <div id="content-ios" class="space-y-4 hidden animate-fade-in-up">
+            <div class="bg-white p-5 rounded-2xl flex items-center gap-5 border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                <div class="w-8 h-8 shrink-0 rounded-full bg-ukRed text-white flex items-center justify-center font-bold text-sm shadow-md">1</div>
+                <div class="w-10 h-10 shrink-0 rounded-xl bg-ukRed/10 text-ukRed flex items-center justify-center text-lg"><i class="fa-solid fa-desktop"></i></div>
+                <div class="font-semibold text-slate-700">Mở trang web EngJoy bằng trình duyệt Safari</div>
+            </div>
+            
+            <div class="bg-white p-5 rounded-2xl flex items-center gap-5 border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                <div class="w-8 h-8 shrink-0 rounded-full bg-ukRed text-white flex items-center justify-center font-bold text-sm shadow-md">2</div>
+                <div class="w-10 h-10 shrink-0 rounded-xl bg-ukRed/10 text-ukRed flex items-center justify-center text-lg"><i class="fa-solid fa-arrow-up-from-bracket"></i></div>
+                <div class="font-semibold text-slate-700">Nhấn nút Chia sẻ (biểu tượng hình vuông có mũi tên lên)</div>
+            </div>
+            
+            <div class="bg-white p-5 rounded-2xl flex items-center gap-5 border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                <div class="w-8 h-8 shrink-0 rounded-full bg-ukRed text-white flex items-center justify-center font-bold text-sm shadow-md">3</div>
+                <div class="w-10 h-10 shrink-0 rounded-xl bg-ukRed/10 text-ukRed flex items-center justify-center text-lg"><i class="fa-solid fa-plus"></i></div>
+                <div class="font-semibold text-slate-700">Kéo xuống và chọn "Thêm vào Màn hình chính"</div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Script hỗ trợ chuyển tab
+        function switchTab(tab) {
+            const btnAndroid = document.getElementById('tab-android');
+            const btnIos = document.getElementById('tab-ios');
+            const contentAndroid = document.getElementById('content-android');
+            const contentIos = document.getElementById('content-ios');
+
+            if (tab === 'android') {
+                btnAndroid.className = 'flex-1 py-2.5 rounded-xl font-bold text-ukBlue bg-white shadow-sm transition-all flex items-center justify-center gap-2';
+                btnIos.className = 'flex-1 py-2.5 rounded-xl font-bold text-slate-400 hover:text-ukRed transition-all flex items-center justify-center gap-2 bg-transparent';
+                contentAndroid.classList.remove('hidden');
+                contentIos.classList.add('hidden');
+            } else {
+                btnIos.className = 'flex-1 py-2.5 rounded-xl font-bold text-ukRed bg-white shadow-sm transition-all flex items-center justify-center gap-2';
+                btnAndroid.className = 'flex-1 py-2.5 rounded-xl font-bold text-slate-400 hover:text-ukBlue transition-all flex items-center justify-center gap-2 bg-transparent';
+                contentIos.classList.remove('hidden');
+                contentAndroid.classList.add('hidden');
+            }
+        }
+
+        // Script cài đặt PWA (Install page as app)
+        let deferredPrompt;
+        
+        window.addEventListener('beforeinstallprompt', (e) => {
+            // Ngăn trình duyệt tự động hiển thị popup
+            e.preventDefault();
+            // Lưu lại event để kích hoạt khi bấm nút
+            deferredPrompt = e;
+        });
+
+        const installBtn = document.getElementById('installAppBtn');
+        if (installBtn) {
+            installBtn.addEventListener('click', async () => {
+                if (deferredPrompt) {
+                    // Hiển thị popup cài đặt của trình duyệt
+                    deferredPrompt.prompt();
+                    // Đợi người dùng phản hồi (Đồng ý hoặc Hủy)
+                    const { outcome } = await deferredPrompt.userChoice;
+                    // Xóa event sau khi dùng xong
+                    deferredPrompt = null;
+                } else {
+                    // Thông báo nếu trình duyệt không hỗ trợ hoặc web chưa đủ điều kiện PWA (thiếu manifest, chạy file local...)
+                    alert('Lưu ý: Để nút này hiện bảng cài đặt, website cần được tải lên máy chủ thật (có https) và phải khai báo file manifest.json chuẩn PWA.\n\nTrong lúc thử nghiệm ở máy tính, bạn vui lòng làm theo 3 bước hướng dẫn cài đặt thủ công ở trên nhé!');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
